@@ -15,7 +15,7 @@ fs.createReadStream(filePath)
     let name = "Sifiso Abdalla"; 
 
     let single = Check(name, data);
-   
+    console.log(single);
 
     const express = require('express');
     const app = express();
