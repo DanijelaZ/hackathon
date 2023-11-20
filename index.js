@@ -10,19 +10,15 @@ fs.createReadStream(filePath)
   .on('data', (row) => {
     data.push(row);
   })
-  .on('end', () => {
-
-    let name = "Sifiso Abdalla"; 
-
-    let single = Check(name, data);
-    console.log(single);
+  .on('end', () => {    
 
     const express = require('express');
     const app = express();
     
-    
-    app.get('/stats/player', (req, res) => {
-    
+    // path parm
+    app.get('/stats/player/:name', (req, res) => {
+      let single = Check(req.params.name, data);
+      console.log(single);
         res.send(single);   
       });
        
